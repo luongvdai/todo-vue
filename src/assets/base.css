@@ -1,0 +1,9 @@
+#app {
+  border: 1px black solid;
+  min-height: 90vh;
+  max-width: 50%;
+  margin: auto auto;
+}
+.icon-tabler {
+  cursor: pointer;
+}
