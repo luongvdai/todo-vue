@@ -6,6 +6,7 @@
         type="text"
         class="form-control mx-2"
         placeholder="Nhập công việc"
+        required
       />
       <button class="btn btn-primary mx-2" type="submit">Thêm</button>
     </form>

@@ -6,7 +6,7 @@
     <h4>{{ item.title }}</h4>
     <div class="option">
       <done-vue v-if="item.active === false" @click="item.active = true" />
-      <remove-vue />
+      <remove-vue @click="handleDelete(item)" />
     </div>
   </div>
 </template>
@@ -26,7 +26,11 @@ export default {
     doneVue,
     removeVue,
   },
-  methods: {},
+  methods: {
+    handleDelete(data) {
+      this.$emit("remove-event", data);
+    },
+  },
   computed: {},
 };
 </script>

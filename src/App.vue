@@ -1,6 +1,6 @@
 <template>
   <TheHeader />
-  <TheMain v-bind:listTodo="listTodo" />
+  <TheMain v-bind:listTodo="listTodo" @remove-event="handleDeleteEvent" />
   <TheFooter @add-event="handleAddEvent" />
 </template>
 
@@ -16,7 +16,7 @@ export default {
         { id: 0, title: "Do something", active: true },
         { id: 1, title: "Do something", active: false },
         { id: 2, title: "Do something", active: true },
-        { id: 3, title: "Do something", active: false }
+        { id: 3, title: "Do something", active: false },
       ],
     };
   },
@@ -33,6 +33,11 @@ export default {
         id: this.listTodo.length + 1,
         title: data,
         active: false,
+      });
+    },
+    handleDeleteEvent(data) {
+      this.listTodo = this.listTodo.filter((item) => {
+        return item.id != data.id;
       });
     },
   },

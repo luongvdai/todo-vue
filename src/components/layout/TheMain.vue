@@ -4,6 +4,7 @@
       v-for="item in listTodo"
       v-bind:key="item.id"
       v-bind:item="item"
+      @remove-event="handleDelete(item)"
     />
   </div>
 </template>
@@ -23,6 +24,11 @@ export default {
   },
   components: {
     TodoItem,
+  },
+  methods: {
+    handleDelete(data) {
+      this.$emit("remove-event", data);
+    },
   },
 };
 </script>
